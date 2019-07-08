@@ -1,8 +1,17 @@
+<p id="notice"><%= notice %></p>
 <h1>Welcome to MiniBlog</h1>
-<p>
-  <%= link_to 'View users', users_path %>
-</p>
 
-<p>
-  <%= link_to 'View tweets', tweets_path %>
-</p>
+<% if current_user %>
+  <p>
+    <%= link_to 'Tweets', tweets_path %>
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+  </p>
+<% else %>
+  <p>
+    <%= link_to 'Sign up', new_user_registration_path %>
+  </p>
+
+  <p>
+    <%= link_to 'Sign in', new_user_session_path %>
+  </p>
+<% end %>

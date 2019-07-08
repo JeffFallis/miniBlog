@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1> My Tweets </h1>
+
+<table>
+  <tbody>
+    <% @tweets.each do |tweet| %>
+      <tr>
+        <td><%= tweet.Content %></td>
+        <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
+        <td><%= link_to 'Delete', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', tweets_path %>

@@ -12,13 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :UserID %>
-    <%= form.number_field :UserID %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Content %>
-    <%= form.text_field :Content %>
+    <%= form.text_area :Content, rows: "5", cols: "50", value: "Whats on your mind..." %>
   </div>
 
   <div class="actions">
